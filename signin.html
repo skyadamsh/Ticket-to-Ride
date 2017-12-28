@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ticket to Ride: {{ version }}</title>
+	</head>
+	<body>
+
+		<h1>Get Started!</h1>
+		
+		<form action="/chooseTeam" method="POST">
+		  username:<br>
+		  <input type="text" name="username">
+		  <br><br>
+		  <input type="submit" value="Submit">
+		</form> 
+
+		<p>{{ error }}</p>
+		
+	</body>
+</html>
