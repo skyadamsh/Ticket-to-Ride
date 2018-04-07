@@ -79,7 +79,7 @@ def logout():
     return redirect(url_for('renderMain'))
 
 @app.route('/chooseTeam',methods=['GET','POST'])
-def renderPage3():
+def chooseTeam():
         #usernames.append(request.form['username']) #TODO: lock this or use a database
         return render_template('chooseTeam.html')
     
