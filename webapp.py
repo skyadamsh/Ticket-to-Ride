@@ -6,6 +6,8 @@ from flask_oauthlib.client import OAuth
 
 app = Flask(__name__)
 
+app.debug = True #change to False for production
+
 # In order to use "sessions",you need a "secret key".
 # This is something random you generate.  
 # Just type some arbitrary letters and numbers.
@@ -82,4 +84,4 @@ def renderPage3():
         return render_template('chooseTeam.html')
     
 if __name__=="__main__":
-    app.run(debug=True,host="0.0.0.0",port=54321)
+    app.run(debug=True)
