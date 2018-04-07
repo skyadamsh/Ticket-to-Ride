@@ -78,7 +78,7 @@ def logout():
 
 @app.route('/chooseTeam',methods=['GET','POST'])
 def renderPage3():
-        usernames.append(request.form['username']) #TODO: lock this or use a database
+        #usernames.append(request.form['username']) #TODO: lock this or use a database
         return render_template('chooseTeam.html')
     
 if __name__=="__main__":
