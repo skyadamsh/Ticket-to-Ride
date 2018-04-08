@@ -3,6 +3,7 @@ from flask import Flask, url_for, render_template, request, flash
 from flask import redirect
 from flask import session
 from flask_oauthlib.client import OAuth
+import pymongo
 
 app = Flask(__name__)
 
