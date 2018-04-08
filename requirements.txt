@@ -11,3 +11,4 @@ wheel
 WTForms
 Flask-OAuthlib
 Flask-PyMongo
+pymongo
