@@ -49,17 +49,9 @@ collection = db['playersAndGames']
 def inject_logged_in():
     return {"logged_in":('github_token' in session)}
 
-usernames = []
-
 @app.route('/')
 def renderMain():
     return render_template('home.html')
-
-@app.route('/startOver')
-def startOver():
-    usernames.remove(session['username'])
-    session.clear() #clears variable values and creates a new session
-    return redirect(url_for('renderMain')) # url_for('renderMain') could be replaced with '/'
 
 @app.route('/startEurope')
 def renderPage2():
