@@ -12,8 +12,10 @@
       </ul>
     {% endif %}
   {% endwith %}
-  {% block body %}{% endblock %}
+  
   {% if logged_in %}
   <a href='/logout'>Log out</a>
   {% endif %}
+  
+  {% block body %}{% endblock %}
 </body>
