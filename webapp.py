@@ -85,5 +85,10 @@ def chooseTeam():
         #usernames.append(request.form['username']) #TODO: lock this or use a database
         return render_template('chooseTeam.html')
     
+#automatically called to check who is logged in
+@github.tokengetter
+def get_github_oauth_token():
+    return session.get('github_token')
+    
 if __name__=="__main__":
     app.run(debug=True)
