@@ -4,6 +4,7 @@ from flask import redirect
 from flask import session
 from flask_oauthlib.client import OAuth
 import pymongo
+from pymongo import MongoClient
 
 app = Flask(__name__)
 
