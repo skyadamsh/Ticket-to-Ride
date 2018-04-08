@@ -39,9 +39,9 @@ url = 'mongodb://{}:{}@{}:{}/{}'.format(
         os.environ["MONGO_PORT"],
         os.environ["MONGO_DBNAME"])
     
-    client = pymongo.MongoClient(url)
-    db = client[os.environ["MONGO_DBNAME"]]
-    collection = db['playersAndGames']
+client = pymongo.MongoClient(url)
+db = client[os.environ["MONGO_DBNAME"]]
+collection = db['playersAndGames']
 
 
 @app.context_processor
