@@ -30,6 +30,18 @@ github = oauth.remote_app(
     authorize_url='https://github.com/login/oauth/authorize' #URL for github's OAuth login
 )
 
+#Connect to database
+url = 'mongodb://{}:{}@{}:{}/{}'.format(
+        os.environ["MONGO_USERNAME"],
+        os.environ["MONGO_PASSWORD"],
+        os.environ["MONGO_HOST"],
+        os.environ["MONGO_PORT"],
+        os.environ["MONGO_DBNAME"])
+    
+    client = pymongo.MongoClient(url)
+    db = client[os.environ["MONGO_DBNAME"]]
+    collection = db['playersAndGames']
+
 
 @app.context_processor
 def inject_logged_in():
@@ -81,7 +93,7 @@ def logout():
 
 @app.route('/chooseTeam',methods=['GET','POST'])
 def chooseTeam():
-        #usernames.append(request.form['username']) #TODO: lock this or use a database
+        print(collection.find_one({"notPlaying":[]})
         return render_template('chooseTeam.html')
     
 #automatically called to check who is logged in
