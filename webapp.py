@@ -62,9 +62,8 @@ def authorized():
     else:
         try:
             #save user data and set log in message
-            print(resp['access_token'])
-            print(github.get('user').data)
             session['github_token']=(resp['access_token'],'')
+            print(github.get('user').data)
             session['user_data']=github.get('user').data
             message="You were successfully logged in as " + session['user_data']['login']
         except:
