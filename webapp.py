@@ -94,7 +94,7 @@ def logout():
 
 @app.route('/chooseTeam',methods=['GET','POST'])
 def chooseTeam():
-        print(collection.find_one({"notPlaying":[]})
+        print(collection.find_one({"notPlaying":[]}))
         return render_template('chooseTeam.html')
     
 #automatically called to check who is logged in
